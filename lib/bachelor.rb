@@ -1,7 +1,7 @@
 def get_first_name_of_season_winner(data, season)
-  data.each do |s, contestant|
+  data.each do |s, contestants|
     if s == season
-      contestant.each do |contestant_data|
+      contestants.each do |contestant_data|
         if contestant_data["status"] == "Winner"
           name_ary = contestant_data["name"].split(" ")
           return name_ary[0]
@@ -13,13 +13,7 @@ end
 
 def get_contestant_name(data, occupation)
   data.each do |s, contestant|
-    contestant.each do |contestant_data|
-      if contestant_data["occupation"] == occupation
-        name = contestant_data["name"]
-        name
-      end
-    end
-  end
+    
 end
 
 def count_contestants_by_hometown(data, hometown)
